@@ -6,8 +6,12 @@ const geistSans = Geist({ variable: '--font-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mihaildimoski.dev'),
   title: 'Mihail Dimoski — Full-Stack Engineer',
-  description: 'Full-stack engineer building production TypeScript products.',
+  description:
+    'Full-stack engineer: backend reliability and security in TypeScript and Rust, and a multi-tenant platform rebuilt and run end to end.',
+  openGraph: { type: 'website', siteName: 'Mihail Dimoski' },
+  robots: { index: false, follow: false },
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

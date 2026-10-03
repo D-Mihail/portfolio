@@ -12,6 +12,11 @@ export interface SelectHighlightsArguments {
   variant: CvVariant
 }
 
+export interface AppearsInArguments {
+  variants: CvVariant[] | undefined
+  variant: CvVariant
+}
+
 export interface ContactLink {
   label: string
   href: string
@@ -56,5 +61,41 @@ export interface EarlierRole {
   title: string
   organisation: string
   period: string
+  note: string
+}
+
+export interface Practice {
+  title: string
+  body: string
+}
+
+export interface HeadlineFigure {
+  value: string
+  label: string
+}
+
+export interface Timing {
+  action: string
+  legacySeconds: number
+  rebuiltSeconds: number
+}
+
+export interface TimingSet {
+  layer: string
+  description: string
+  timings: Timing[]
+}
+
+export interface Approach {
+  name: string
+  verdict: string
+  reason: string
+}
+
+export interface CodeExcerpt {
+  title: string
+  file: string
+  language: string
+  code: string
   note: string
 }

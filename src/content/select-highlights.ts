@@ -1,5 +1,9 @@
-import type { Highlight, SelectHighlightsArguments } from './types'
+import type { AppearsInArguments, Highlight, SelectHighlightsArguments } from './types'
+
+export function appearsIn({ variants, variant }: AppearsInArguments): boolean {
+  return variants === undefined || variants.includes(variant)
+}
 
 export function selectHighlights({ highlights, variant }: SelectHighlightsArguments): Highlight[] {
-  return highlights.filter((highlight) => highlight.variants === undefined || highlight.variants.includes(variant))
+  return highlights.filter((highlight) => appearsIn({ variants: highlight.variants, variant }))
 }

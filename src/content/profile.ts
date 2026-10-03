@@ -1,15 +1,19 @@
 import type { Education, Profile, SkillGroup } from './types'
 
+const generalHeadline = 'Full-Stack Engineer · TypeScript, React / Next.js, Node.js, GraphQL'
+
+const generalSummary =
+  'Full-stack engineer with real backend depth. At Pabau I build the parts that must not fail quietly — webhook ingestion, queue consumers, security hardening — in TypeScript and Rust. On my own I rebuilt and run a multi-tenant platform end to end. I write the failure mode down before the code, and use AI agents daily under guardrails I built.'
+
 export const profile: Profile = {
   name: 'Mihail Dimoski',
   location: 'Skopje, North Macedonia · open to remote EU and relocation',
   headline: {
-    general: 'Full-Stack Engineer · TypeScript, React / Next.js, Node.js, GraphQL',
+    general: generalHeadline,
     hornetsecurity: 'Full-Stack Engineer · TypeScript, Node.js, Rust · backend reliability and security',
   },
   summary: {
-    general:
-      'Full-stack engineer with real backend depth. At Pabau I build the parts that must not fail quietly — webhook ingestion, queue consumers, security hardening — in TypeScript and Rust. On my own I rebuilt and run a multi-tenant platform end to end. I write the failure mode down before the code, and use AI agents daily under guardrails I built.',
+    general: generalSummary,
     hornetsecurity:
       'Full-stack engineer focused on backend reliability and security — webhook ingestion, at-least-once queues, account-enumeration hardening — in TypeScript and Rust. I rebuilt and run a multi-tenant GraphQL platform on MariaDB and Docker, and practise AI-assisted development with guardrails I built.',
   },

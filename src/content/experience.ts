@@ -11,13 +11,13 @@ export const experience: Role[] = [
         text: 'Built SMS delivery-receipt ingestion: a public webhook service verifying two providers’ signatures (HMAC, Ed25519) at a stateless edge, feeding a queue consumer. Wrote the decision record.',
       },
       {
-        text: 'Stopped duplicate and dropped patient messages from an at-least-once queue with no provider idempotency key — guarded writes, no retry after a send, indeterminate timeouts — in TypeScript and Rust.',
+        text: 'Made message sending safe on an at-least-once queue with no provider idempotency key — guarded writes, no retry after a send, timeouts treated as indeterminate — in TypeScript and Rust.',
       },
       {
         text: 'Hardened patient-portal password reset against account enumeration with uniform responses, a latency floor and per-IP rate limits.',
       },
       {
-        text: 'Designed observability across a TypeScript-to-Rust GraphQL migration; it exposed a card double-charge risk and a query that could never match.',
+        text: 'Designed observability across a TypeScript-to-Rust GraphQL migration, which surfaced real payment and query bugs.',
       },
       {
         text: 'Earlier: search over 1.3 million clinical terminology rows, per-location pricing on Stripe, point-of-sale package accounting.',
@@ -28,7 +28,7 @@ export const experience: Role[] = [
 
 export const flagship: Project = {
   name: 'ATS Flow — applicant tracking for trucking recruiters',
-  role: 'Sole engineer on the rebuild, freelance alongside Pabau',
+  role: 'Sole engineer on the rebuild (freelance)',
   period: 'April 2025 – present (rebuild since July 2026)',
   stack: 'Next.js · Pothos GraphQL · Prisma · MariaDB · Docker',
   highlights: [

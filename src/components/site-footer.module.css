@@ -1,0 +1,29 @@
+.footer {
+  margin-top: 96px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.inner {
+  width: min(100% - 32px, 1040px);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-block: 28px;
+}
+
+.inner p {
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

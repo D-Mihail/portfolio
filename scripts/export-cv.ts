@@ -14,7 +14,8 @@ try {
     const pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true })
     const pageCount = countPdfPages({ pdf })
     if (pageCount !== 1) throw new Error(`${variant} prints ${pageCount} pages, expected exactly one`)
-    await Bun.write(`public/cv/mihail-dimoski-${variant}.pdf`, pdf)
+    const directory = variant === 'general' ? 'public/cv' : 'docs/applications/cv'
+    await Bun.write(`${directory}/mihail-dimoski-${variant}.pdf`, pdf)
     console.log(`${variant}: 1 page`)
   }
 } finally {

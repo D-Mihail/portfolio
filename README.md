@@ -7,6 +7,6 @@ Personal site and CV for mihaildimoski.dev. Career data lives once in `src/conte
 bun install
 bun run dev          # http://localhost:3000
 bun test             # unit tests
-bun run build && bun run start -p 3100   # then, in another terminal:
-bun run cv:export    # writes public/cv/*.pdf, fails unless each is exactly one page
+CV_INCLUDE_TAILORED=1 bun run build && bun run start -p 3100   # then, in another terminal:
+bun run cv:export    # general → public/cv, tailored → docs/applications/cv (gitignored); fails unless each is one page
 ```

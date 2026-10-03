@@ -1,0 +1,31 @@
+.lead {
+  margin: 0;
+  max-width: 40em;
+  font-size: 19px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

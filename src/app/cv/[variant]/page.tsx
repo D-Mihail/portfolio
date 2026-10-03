@@ -3,20 +3,23 @@ import { notFound } from 'next/navigation'
 import { education, languages, profile, skills } from '@/content/profile'
 import { earlierRoles, experience, flagship } from '@/content/experience'
 import { selectHighlights } from '@/content/select-highlights'
-import { CV_VARIANTS, isCvVariant } from '@/content/variants'
+import { isCvVariant, publishedCvVariants } from '@/content/variants'
 import styles from './cv.module.css'
 
 export const dynamicParams = false
 
+// Tailored variants render only in the local export build; a deployed site must not serve them.
+const includeTailored = process.env.CV_INCLUDE_TAILORED === '1'
+
 export function generateStaticParams() {
-  return CV_VARIANTS.map((variant) => ({ variant }))
+  return publishedCvVariants({ includeTailored }).map((variant) => ({ variant }))
 }
 
 export const metadata = { title: 'Mihail Dimoski — CV', robots: { index: false } }
 
 export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
   const { variant } = await params
-  if (!isCvVariant(variant)) notFound()
+  if (!isCvVariant(variant) || !publishedCvVariants({ includeTailored }).includes(variant)) notFound()
 
   return (
     <article className={styles.sheet}>
@@ -28,7 +31,9 @@ export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
           <ul className={styles.links}>
             {profile.links.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -75,7 +80,9 @@ export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
           ))}
         </ul>
         <p className={styles.caseLink}>
-          Case study and live demo: <a href="https://mihaildimoski.dev/case/ats-rebuild">mihaildimoski.dev/case/ats-rebuild</a>
+          Case study and live demo: <a href="https://mihaildimoski.dev/case/ats-rebuild" target="_blank" rel="noopener noreferrer">
+            mihaildimoski.dev/case/ats-rebuild
+          </a>
         </p>
       </section>
 
