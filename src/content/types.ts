@@ -51,3 +51,10 @@ export interface Education {
   qualification: string
   period: string
 }
+
+export interface EarlierRole {
+  title: string
+  organisation: string
+  period: string
+  note: string
+}

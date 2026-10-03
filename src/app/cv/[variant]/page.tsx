@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { education, languages, profile, skills } from '@/content/profile'
-import { experience, flagship } from '@/content/experience'
+import { earlierRoles, experience, flagship } from '@/content/experience'
 import { selectHighlights } from '@/content/select-highlights'
 import { CV_VARIANTS, isCvVariant } from '@/content/variants'
 import styles from './cv.module.css'
@@ -39,6 +39,28 @@ export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
       <p className={styles.summary}>{profile.summary[variant]}</p>
 
       <section>
+        <h2 className={styles.sectionTitle}>Experience</h2>
+        {experience.map((role) => (
+          <div key={role.organisation} className={styles.entry}>
+            <div className={styles.entryHead}>
+              <h3 className={styles.entryTitle}>
+                {role.title}, {role.organisation}
+              </h3>
+              <span className={styles.period}>{role.period}</span>
+            </div>
+            {role.context && <p className={styles.entryMeta}>{role.context}</p>}
+            {role.highlights.length > 0 && (
+              <ul className={styles.highlights}>
+                {selectHighlights({ highlights: role.highlights, variant }).map((highlight) => (
+                  <li key={highlight.text}>{highlight.text}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </section>
+
+      <section>
         <h2 className={styles.sectionTitle}>Selected work</h2>
         <div className={styles.entryHead}>
           <h3 className={styles.entryTitle}>{flagship.name}</h3>
@@ -58,23 +80,13 @@ export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
       </section>
 
       <section>
-        <h2 className={styles.sectionTitle}>Experience</h2>
-        {experience.map((role) => (
-          <div key={role.organisation} className={styles.entry}>
-            <div className={styles.entryHead}>
-              <h3 className={styles.entryTitle}>
-                {role.title}, {role.organisation}
-              </h3>
-              <span className={styles.period}>{role.period}</span>
-            </div>
-            {role.context && <p className={styles.entryMeta}>{role.context}</p>}
-            {role.highlights.length > 0 && (
-              <ul className={styles.highlights}>
-                {selectHighlights({ highlights: role.highlights, variant }).map((highlight) => (
-                  <li key={highlight.text}>{highlight.text}</li>
-                ))}
-              </ul>
-            )}
+        <h2 className={styles.sectionTitle}>Earlier</h2>
+        {earlierRoles.map((role) => (
+          <div key={role.organisation} className={styles.entryHead}>
+            <span>
+              <strong>{role.title}</strong>, {role.organisation} · {role.note}
+            </span>
+            <span className={styles.period}>{role.period}</span>
           </div>
         ))}
       </section>
