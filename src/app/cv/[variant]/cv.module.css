@@ -1,0 +1,163 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.sheet {
+  --cv-ink: #16191d;
+  --cv-muted: #555b62;
+  --cv-rule: #dedad2;
+  --cv-accent: #0e7c90;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 24px auto;
+  padding: 13mm 14mm 11mm;
+  background: #ffffff;
+  color: var(--cv-ink);
+  font-size: 9.1pt;
+  line-height: 1.4;
+  box-shadow: 0 2px 24px rgb(0 0 0 / 0.12);
+}
+
+@media print {
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    min-height: auto;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8mm;
+  padding-bottom: 4mm;
+  border-bottom: 1.5px solid var(--cv-ink);
+}
+
+.name {
+  margin: 0;
+  font-size: 21pt;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.headline {
+  margin: 1.5mm 0 0;
+  font-size: 10.5pt;
+  color: var(--cv-accent);
+  font-weight: 550;
+}
+
+.location {
+  margin: 1mm 0 0;
+  color: var(--cv-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4mm;
+  margin: 2mm 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 8pt;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.portrait {
+  width: 25mm;
+  height: 30mm;
+  object-fit: cover;
+  border-radius: 2mm;
+  flex-shrink: 0;
+}
+
+.summary {
+  margin: 3.5mm 0 0;
+}
+
+.sectionTitle {
+  margin: 4.5mm 0 1.5mm;
+  font-size: 8pt;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+  border-bottom: 1px solid var(--cv-rule);
+  padding-bottom: 0.8mm;
+}
+
+.entry + .entry {
+  margin-top: 2.5mm;
+}
+
+.entryHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.entryTitle {
+  margin: 0;
+  font-size: 9.8pt;
+  font-weight: 620;
+}
+
+.period {
+  flex-shrink: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 7.8pt;
+  color: var(--cv-muted);
+}
+
+.entryMeta {
+  margin: 0.5mm 0 0;
+  color: var(--cv-muted);
+}
+
+.highlights {
+  margin: 1mm 0 0;
+  padding-left: 4mm;
+}
+
+.highlights li + li {
+  margin-top: 0.7mm;
+}
+
+.caseLink {
+  margin: 1.5mm 0 0;
+  font-weight: 550;
+}
+
+.caseLink a {
+  color: var(--cv-accent);
+}
+
+.skills {
+  margin: 0;
+}
+
+.skills div {
+  display: grid;
+  grid-template-columns: 42mm 1fr;
+  gap: 3mm;
+}
+
+.skills div + div {
+  margin-top: 0.6mm;
+}
+
+.skills dt {
+  font-weight: 600;
+}
+
+.skills dd {
+  margin: 0;
+}
