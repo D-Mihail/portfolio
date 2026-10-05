@@ -6,8 +6,8 @@ export function ContactBlock() {
   return (
     <div className={styles.block}>
       <p className={styles.lead}>
-        I’m looking for an intermediate or senior full-stack, backend or frontend role — in Skopje, remote in the EU, or
-        with relocation. If you’re building something that has to stay correct under load, I’d like to hear about it.
+        I’m looking for a full-stack, backend or frontend role. If you’re building something that has to stay correct
+        under load, I’d like to hear about it.
       </p>
       <ul className={styles.links}>
         {profile.links

@@ -1,7 +1,7 @@
 import type { Approach, CodeExcerpt, TimingSet } from './types'
 
 export const measurementMethod =
-  'Playwright, headless Chromium, on both live production systems on 26 September 2026 — same machine and network, a fresh browser session per run, medians of 5–15 runs, tenants of 758 and 680 leads. Client caches were excluded so both systems had to answer from the server.'
+  'Playwright, headless Chromium, on both live production systems on 26 September 2026, with the same machine and network, a fresh browser session per run, medians of 5 to 15 runs, tenants of 758 and 680 leads. Client caches were excluded so both systems had to answer from the server.'
 
 export const timingSets: TimingSet[] = [
   {
@@ -35,7 +35,7 @@ export const approaches: Approach[] = [
     name: 'Rebuild, data model first',
     verdict: 'Chosen',
     reason:
-      'Design the relational schema, tenancy and audit rules first, then the API, then the screens — and run both systems side by side until the new one is measurably better. It costs more up front and is the only option that fixes the cause.',
+      'Design the relational schema, tenancy and audit rules first, then the API, then the screens, and run both systems side by side until the new one is measurably better. It costs more up front and is the only option that fixes the cause.',
   },
 ]
 
@@ -44,7 +44,7 @@ export const excerpts: CodeExcerpt[] = [
     title: 'Closed by default',
     file: 'apps/backend/src/runtime/builder.ts',
     language: 'ts',
-    code: `// DEFAULT-DENY — closes every root field, including future ones, unless it
+    code: `// DEFAULT-DENY: closes every root field, including future ones, unless it
 // opts out; the inverse of Pothos's fail-open default. Opting out needs BOTH
 // skipTypeScopes and the field's own authScopes, so \`public\` alone is denied.
 builder.queryType({ authScopes: { active: true } })
@@ -69,7 +69,7 @@ export function leadScope(
     title: 'Scoped on the write itself',
     file: 'apps/backend/src/schema/lead/mutations/delete-lead.ts',
     language: 'ts',
-    code: `// The tenant predicate ON THE WRITE, never a bare \`where: { id }\` —
+    code: `// The tenant predicate ON THE WRITE, never a bare \`where: { id }\`,
 // Lead ids are sequential Ints and therefore guessable.
 const { count } = await tx.lead.updateMany({
   // UNSOURCED: only leads entered by hand may be deleted.

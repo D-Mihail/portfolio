@@ -1,33 +1,55 @@
-import type { EarlierRole, Project, Role } from './types'
+import type { Project, Role } from './types'
 
 export const experience: Role[] = [
   {
     organisation: 'Pabau Clinic Software',
     title: 'Software Developer',
-    period: 'January 2024 – present (intern from October 2023)',
-    context: 'Clinic-management SaaS · TypeScript, Node.js, Rust, GraphQL, RabbitMQ, MariaDB, React',
+    period: 'October 2023 – present',
+    context: 'Clinic-management SaaS · TypeScript, Node.js, GraphQL, RabbitMQ, MariaDB, React',
     highlights: [
       {
         text: 'Built SMS delivery-receipt ingestion: a public webhook service verifying two providers’ signatures (HMAC, Ed25519) at a stateless edge, feeding a queue consumer. Wrote the decision record.',
       },
       {
-        text: 'Made message sending safe on an at-least-once queue with no provider idempotency key — guarded writes, no retry after a send, timeouts treated as indeterminate — in TypeScript and Rust.',
+        text: 'Hardened message sending on an at-least-once queue with no provider idempotency key, using guarded writes, no retry after a send and timeouts treated as indeterminate.',
+        variants: ['general'],
+      },
+      {
+        text: 'Hardened email and SMS sending on an at-least-once queue with no provider idempotency key, using guarded writes, no retry after a send and timeouts treated as indeterminate.',
+        variants: ['hornetsecurity'],
       },
       {
         text: 'Hardened patient-portal password reset against account enumeration with uniform responses, a latency floor and per-IP rate limits.',
       },
       {
-        text: 'Designed observability across a TypeScript-to-Rust GraphQL migration, which surfaced real payment and query bugs.',
+        text: 'Designed observability events across a migration between two GraphQL engines, surfacing real payment bugs.',
       },
       {
-        text: 'Earlier: search over 1.3 million clinical terminology rows, per-location pricing on Stripe, point-of-sale package accounting.',
+        text: 'Earlier: search over 1.3 million clinical terminology rows, Stripe pricing per location, POS package accounting.',
       },
     ],
+  },
+  {
+    organisation: 'Truckers Flow',
+    title: 'Frontend Developer (freelance)',
+    period: 'February 2023 – October 2023',
+    context: 'Recruiting platform for trucking companies · Next.js, TypeScript, Material UI',
+    highlights: [
+      { text: 'Led the frontend of the recruiter web app, with responsive layouts across desktop and mobile.' },
+      { text: 'Turned requirements into mockups, prototypes and functional documentation.' },
+    ],
+  },
+  {
+    organisation: 'Hidro-Konsult, Skopje',
+    title: 'Mechanical Engineer',
+    period: 'November 2019 – April 2022',
+    context: 'Hydraulic modelling and design documentation',
+    highlights: [],
   },
 ]
 
 export const flagship: Project = {
-  name: 'ATS Flow — applicant tracking for trucking recruiters',
+  name: 'ATS Flow, applicant tracking for trucking recruiters',
   role: 'Sole engineer on the rebuild (freelance)',
   period: 'April 2025 – present (rebuild since July 2026)',
   stack: 'Next.js · Pothos GraphQL · Prisma · MariaDB · Docker',
@@ -50,13 +72,3 @@ export const flagship: Project = {
     },
   ],
 }
-
-export const earlierRoles: EarlierRole[] = [
-  { title: 'Frontend Developer (freelance)', organisation: 'Truckers Flow', period: '2023', note: 'Next.js, TypeScript, Material UI' },
-  {
-    title: 'Mechanical Engineer',
-    organisation: 'Hidro-Konsult, Skopje',
-    period: '2019 – 2022',
-    note: 'hydraulic modelling and design documentation',
-  },
-]

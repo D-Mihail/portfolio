@@ -11,11 +11,11 @@ export const practices: Practice[] = [
   },
   {
     title: 'Invariants enforced by machines',
-    body: 'If a rule matters — tenant scoping, one validation rule per concept, no ad-hoc styling — a test or the type checker enforces it. Memory and code review are not a control.',
+    body: 'If a rule matters, such as tenant scoping, one validation rule per concept or no ad-hoc styling, a test or the type checker enforces it. Memory and code review are not a control.',
   },
   {
     title: 'AI as a multiplier, with guardrails',
-    body: 'I run coding agents in parallel every day, under rules I built: hooks that block bad commits, isolated worktrees and databases per agent, a verified landing loop, and AI review in the loop. An AI reviewer once flagged an unsigned webhook endpoint of mine as high severity — I reversed my own design.',
+    body: 'I run coding agents in parallel every day, under rules I built: hooks that block bad commits, isolated worktrees and databases per agent, a verified landing loop, and AI review in the loop. An AI reviewer once flagged an unsigned webhook endpoint of mine as high severity, and I reversed my own design.',
   },
 ]
 

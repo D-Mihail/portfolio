@@ -32,7 +32,7 @@ export function TimingChart({ timingSet }: TimingChartProperties) {
   return (
     <figure className={styles.figure}>
       <figcaption className={styles.caption}>
-        <strong>{timingSet.layer}</strong> — {timingSet.description}
+        <strong>{timingSet.layer}.</strong> {timingSet.description}
       </figcaption>
       <ul className={styles.legend} aria-hidden="true">
         <li className={styles.legacy}>Legacy (WordPress)</li>

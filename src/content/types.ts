@@ -57,13 +57,6 @@ export interface Education {
   period: string
 }
 
-export interface EarlierRole {
-  title: string
-  organisation: string
-  period: string
-  note: string
-}
-
 export interface Practice {
   title: string
   body: string

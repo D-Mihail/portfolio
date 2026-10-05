@@ -12,8 +12,8 @@ export function Hero() {
           I build the parts of a product that must not fail quietly.
         </h1>
         <p className={styles.lead}>
-          I’m Mihail. At Pabau I work on messaging pipelines, queue consumers and security hardening in TypeScript and
-          Rust. On my own I rebuilt a multi-tenant recruiting platform end to end — and I run it in production.
+          I’m Mihail. At Pabau I work on messaging pipelines, queue consumers and security hardening. On my own I rebuilt
+          a multi-tenant recruiting platform end to end, and I run it in production.
         </p>
         <div className={styles.actions}>
           <Link className={styles.primary} href="/case/ats-rebuild">

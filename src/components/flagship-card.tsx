@@ -26,7 +26,7 @@ export function FlagshipCard() {
         ))}
       </dl>
       <Link className={styles.link} href="/case/ats-rebuild">
-        How it was done — the full case study →
+        Read the full case study →
       </Link>
     </article>
   )
