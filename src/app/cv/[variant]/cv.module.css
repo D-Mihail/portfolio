@@ -8,12 +8,14 @@
   --cv-muted: #555b62;
   --cv-rule: #dedad2;
   --cv-accent: #0e7c90;
+  --cv-font: Arial, 'Liberation Sans', Helvetica, sans-serif;
   width: 210mm;
   min-height: 297mm;
   margin: 24px auto;
   padding: 11mm 13mm 9mm;
   background: #ffffff;
   color: var(--cv-ink);
+  font-family: var(--cv-font);
   font-size: 8.9pt;
   line-height: 1.4;
   box-shadow: 0 2px 24px rgb(0 0 0 / 0.12);
@@ -62,7 +64,7 @@
   margin: 2mm 0 0;
   padding: 0;
   list-style: none;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--cv-font);
   font-size: 8pt;
 }
 
@@ -84,9 +86,8 @@
 
 .sectionTitle {
   margin: 3.8mm 0 1.3mm;
-  font-size: 8pt;
-  font-weight: 650;
-  letter-spacing: 0.12em;
+  font-size: 8.6pt;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--cv-accent);
   border-bottom: 1px solid var(--cv-rule);
@@ -112,7 +113,7 @@
 
 .period {
   flex-shrink: 0;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--cv-font);
   font-size: 7.8pt;
   color: var(--cv-muted);
 }
