@@ -49,11 +49,8 @@
   color: var(--accent);
 }
 
-.link {
-  display: inline-block;
-  margin-top: 24px;
-  font-weight: 600;
-  color: var(--accent);
+.action {
+  margin-top: 28px;
 }
 
 @media (max-width: 760px) {

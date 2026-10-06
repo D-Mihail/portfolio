@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { ButtonLink } from '@/components/button-link'
 import { flagship } from '@/content/experience'
 import { headlineFigures } from '@/content/practices'
 import styles from './flagship-card.module.css'
@@ -25,9 +25,11 @@ export function FlagshipCard() {
           </div>
         ))}
       </dl>
-      <Link className={styles.link} href="/case/ats-rebuild">
-        Read the full case study →
-      </Link>
+      <div className={styles.action}>
+        <ButtonLink href="/case/ats-rebuild" variant="primary">
+          Read the case study
+        </ButtonLink>
+      </div>
     </article>
   )
 }

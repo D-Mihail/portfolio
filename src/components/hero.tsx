@@ -1,6 +1,5 @@
-import { ExternalLink } from '@/components/external-link'
+import { ButtonLink } from '@/components/button-link'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from './hero.module.css'
 
 export function Hero() {
@@ -16,17 +15,14 @@ export function Hero() {
           a multi-tenant recruiting platform end to end, and I run it in production.
         </p>
         <div className={styles.actions}>
-          <Link className={styles.primary} href="/case/ats-rebuild">
-            Read the case study
-          </Link>
-          <ExternalLink className={styles.secondary} href="/cv/mihail-dimoski-general.pdf">
+          <ButtonLink href="/cv/mihail-dimoski-general.pdf" variant="secondary" external>
             Download CV
-          </ExternalLink>
+          </ButtonLink>
         </div>
       </div>
       <Image
         className={styles.portrait}
-        src="/images/site-portrait.jpg"
+        src="/images/hero-portrait.jpg"
         alt="Mihail Dimoski"
         width={1000}
         height={1500}
