@@ -4,6 +4,7 @@ import { CodeExcerpt } from '@/components/code-excerpt'
 import { formatSeconds, TimingChart } from '@/components/timing-chart'
 import {
   approaches,
+  decisions,
   demoUrl,
   deployPhases,
   excerpts,
@@ -37,7 +38,7 @@ export default function AtsRebuildCaseStudy() {
           </div>
           <div>
             <dt>Stack</dt>
-            <dd>TypeScript, Bun, Next.js, Pothos GraphQL, Prisma, MariaDB, Docker</dd>
+            <dd>TypeScript, Bun, Next.js, Pothos GraphQL, Prisma, MariaDB, better-auth, SendGrid, Twilio, Docker, Traefik</dd>
           </div>
           <div>
             <dt>Scale of the work</dt>
@@ -126,6 +127,37 @@ export default function AtsRebuildCaseStudy() {
           the type checker: one file per resolver, one shared validation object per domain concept, and components
           whose props simply don’t accept ad-hoc styling.
         </p>
+      </section>
+
+      <section className={styles.section} aria-labelledby="decisions">
+        <h2 id="decisions">How decisions got made</h2>
+        <p>
+          Anything with a trade-off gets a decision record: what was chosen, the options rejected and why, and
+          the condition that would reopen it. Some decisions are deferred rather than rejected, with the trigger
+          written down, so the day it fires nobody re-derives the argument. When a decision becomes a rule, a test
+          or the type checker enforces it: tenant scoping, one validation rule per concept, one file per resolver.
+          There are 32 records so far.
+        </p>
+        <p>
+          The structure was chosen so that growth is a configuration change, not a rewrite. Apps are dependency
+          sinks and a feature folder is the seam for splitting into separate repositories later. Every list that
+          can grow is a cursor-paginated connection from day one. Indexes lead with the tenant. The API is
+          stateless behind one origin, so a second instance is a compose change. The server itself is small on
+          purpose, and the gaps section below says what a larger footprint would need.
+        </p>
+        <h3 className={styles.subheading}>Decisions along the way</h3>
+        <ol className={styles.decisions}>
+          {decisions.map((decision) => (
+            <li key={decision.question} className={styles.decision}>
+              <p className={styles.decisionQuestion}>{decision.question}</p>
+              <p className={styles.decisionOptions}>
+                <span>Options</span> {decision.options.join(' · ')}
+              </p>
+              <p className={styles.decisionChosen}>{decision.chosen}</p>
+              <p className={styles.decisionReason}>{decision.reason}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className={styles.section} aria-labelledby="tenancy">

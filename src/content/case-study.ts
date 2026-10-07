@@ -1,4 +1,4 @@
-import type { Approach, CodeExcerpt, TimingSet } from './types'
+import type { Approach, CodeExcerpt, Decision, TimingSet } from './types'
 
 export const measurementMethod =
   'Playwright, headless Chromium, on both live production systems on 26 September 2026, with the same machine and network, a fresh browser session per run, medians of 5 to 15 runs, tenants of 758 and 680 leads. Client caches were excluded so both systems had to answer from the server.'
@@ -36,6 +36,33 @@ export const approaches: Approach[] = [
     verdict: 'Chosen',
     reason:
       'Design the relational schema, tenancy and audit rules first, then the API, then the screens, and run both systems side by side until the new one is measurably better. It costs more up front and is the only option that fixes the cause.',
+  },
+]
+
+export const decisions: Decision[] = [
+  {
+    question: 'When does a list become paginated, and who owns the page size?',
+    options: ['plain lists, paginate later', 'cursor connections from day one', 'library defaults for page size'],
+    chosen: 'Anything a user can add to is a cursor connection from the first commit, with a page size pinned per field and checked by a test.',
+    reason: 'Retrofitting pagination later is a schema migration; declaring it early costs nothing. Library defaults move silently on upgrade, so the number lives in our code.',
+  },
+  {
+    question: 'How do you charge a rate limit stored in the database without races?',
+    options: ['read, compare and write with a retry', 'SELECT FOR UPDATE', 'one conditional decrement'],
+    chosen: 'A single UPDATE that subtracts only if enough budget remains; the affected-row count is the verdict.',
+    reason: 'The retry version admitted 4 of 30 concurrent calls while 98 percent of the budget sat unspent. A limiter that says "too many requests" with the budget full is reporting its own write contention.',
+  },
+  {
+    question: 'Concurrent first-of-day reservations deadlocked. Retry, or remove the cause?',
+    options: ['catch the deadlock and retry', 'an upsert', 'SELECT FOR UPDATE', 'make sure the row exists before anyone reserves'],
+    chosen: 'Insert a zero row first and ignore the duplicate-key error, then one conditional update.',
+    reason: 'That turns a gap lock into a record lock. 253 of 300 test rounds had thrown before; after, a denial can only mean the cap is genuinely reached, never that this call lost a race.',
+  },
+  {
+    question: 'Pagination cursors decoded to ids that embed the creation time. What changes?',
+    options: ['time-ordered UUIDs', 're-key every row now', 'sign or encrypt the cursor', 'a new id generator for new rows only'],
+    chosen: 'A non-time-ordered id generator, as a code-only change with no migration.',
+    reason: 'Time-ordered UUIDs would reintroduce the very leak being fixed. Fixing the id at its source removes the leak everywhere the id travels, not just in the cursor.',
   },
 ]
 

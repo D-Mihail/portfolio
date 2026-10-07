@@ -92,3 +92,10 @@ export interface CodeExcerpt {
   code: string
   note: string
 }
+
+export interface Decision {
+  question: string
+  options: string[]
+  chosen: string
+  reason: string
+}

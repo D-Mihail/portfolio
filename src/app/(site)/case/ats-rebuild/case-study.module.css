@@ -118,6 +118,70 @@
   color: var(--accent);
 }
 
+.subheading {
+  margin: 32px 0 14px;
+  font-size: 20px;
+}
+
+.decisions {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: decision;
+}
+
+.decision {
+  counter-increment: decision;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.decision p {
+  margin: 0;
+}
+
+.decision p + p {
+  margin-top: 6px;
+}
+
+.decisionQuestion {
+  font-weight: 650;
+}
+
+.decisionQuestion::before {
+  content: counter(decision, decimal-leading-zero) '  ';
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-warm);
+}
+
+.decisionOptions {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.decisionOptions span {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+.decisionChosen {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.decisionReason {
+  color: var(--muted);
+}
+
 .flow {
   display: grid;
   gap: 8px;
