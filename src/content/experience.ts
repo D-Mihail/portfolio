@@ -5,7 +5,7 @@ export const experience: Role[] = [
     organisation: 'Pabau Clinic Software',
     title: 'Software Developer',
     period: 'October 2023 – present',
-    context: 'Clinic-management SaaS · TypeScript, Node.js, GraphQL, RabbitMQ, MariaDB, React',
+    context: 'Clinic-management SaaS · TypeScript and Node.js microservices, GraphQL, REST, RabbitMQ, MariaDB, React',
     highlights: [
       {
         text: 'Built SMS delivery-receipt ingestion: a public webhook service verifying two providers’ signatures (HMAC, Ed25519) at a stateless edge, feeding a queue consumer. Wrote the decision record.',

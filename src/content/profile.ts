@@ -10,12 +10,12 @@ export const profile: Profile = {
   location: 'Skopje, North Macedonia · open to remote EU and relocation',
   headline: {
     general: generalHeadline,
-    hornetsecurity: 'Software Engineer · TypeScript, Node.js, GraphQL · backend reliability and security',
+    hornetsecurity: 'Software Developer · TypeScript, Node.js, GraphQL · backend services and delivery',
   },
   summary: {
     general: generalSummary,
     hornetsecurity:
-      'Full-stack engineer focused on backend reliability and security: webhook ingestion, at-least-once queues and account-enumeration hardening. I rebuilt and run a multi-tenant GraphQL platform on MariaDB and Docker, and practise AI-assisted development with guardrails I built.',
+      'Backend-leaning full-stack engineer working in containerised Node.js services: a public webhook ingress, a queue consumer, REST and GraphQL APIs, with CI/CD as daily practice. I rebuilt and run a multi-tenant platform on MariaDB and Docker end to end, including its deploy pipeline, and I write decisions down and challenge them.',
   },
   links: [
     { label: 'mihaildimoski.dev', href: 'https://mihaildimoski.dev' },
@@ -28,7 +28,7 @@ export const profile: Profile = {
 export const skills: SkillGroup[] = [
   {
     label: 'Backend',
-    items: 'TypeScript, Node.js, GraphQL, Prisma, SQL, MariaDB, Stripe, Twilio, SendGrid',
+    items: 'TypeScript, Node.js, GraphQL, REST, Prisma, SQL, MariaDB, Stripe, Twilio, SendGrid',
   },
   { label: 'Frontend', items: 'React, Next.js, TanStack, Zod' },
   {
