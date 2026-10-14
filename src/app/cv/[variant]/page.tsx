@@ -80,7 +80,7 @@ export default async function CvPage({ params }: PageProps<'/cv/[variant]'>) {
           ))}
         </ul>
         <p className={styles.caseLink}>
-          Case study: <a href="https://mihaildimoski.dev/case/ats-rebuild" target="_blank" rel="noopener noreferrer">
+          Case study and live demo: <a href="https://mihaildimoski.dev/case/ats-rebuild" target="_blank" rel="noopener noreferrer">
             mihaildimoski.dev/case/ats-rebuild
           </a>
         </p>

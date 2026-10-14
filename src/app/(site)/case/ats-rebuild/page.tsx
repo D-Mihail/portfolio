@@ -285,8 +285,9 @@ export default function AtsRebuildCaseStudy() {
         </p>
         {demoUrl !== null && (
           <p>
-            The recruiter app, as a demo company with seeded, fictional data:{' '}
-            <ExternalLink href={demoUrl}>{demoUrl}</ExternalLink>
+            The recruiter app, signed in to a demo company with fictional data. Nothing you do there leaves the
+            demo: no email or SMS goes out, and destructive actions are refused.{' '}
+            <ExternalLink href={demoUrl}>Open the demo</ExternalLink>
           </p>
         )}
       </section>

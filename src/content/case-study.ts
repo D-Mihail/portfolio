@@ -117,4 +117,4 @@ export const deployPhases = ['stage', 'build', 'pull', 'backup', 'migrate', 'rol
 
 export const jobBoardUrl = 'https://ats-flow-portal.vercel.app/'
 
-export const demoUrl: string | null = null
+export const demoUrl: string | null = 'https://ats-flow-app.vercel.app/demo/ngiY_bJzDN-7woq-e7-sIy11IZ0lyuakYXq8gQIePU5R2ANj'
