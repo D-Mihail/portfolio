@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Full-stack engineer focused on backend reliability and security, with a multi-tenant platform rebuilt and run end to end.',
   openGraph: { type: 'website', siteName: 'Mihail Dimoski' },
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

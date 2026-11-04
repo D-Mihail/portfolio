@@ -11,7 +11,7 @@ export function ContactBlock() {
       </p>
       <ul className={styles.links}>
         {profile.links
-          .filter((link) => !link.href.startsWith('https://mihaildimoski.dev'))
+          .filter((link) => !link.href.startsWith('https://mihaildimoski.dev') && !link.href.startsWith('tel:'))
           .map((link) => (
             <li key={link.href}>
               {link.href.startsWith('https://') ? (

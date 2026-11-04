@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const allowSearchEngines = false
+const allowSearchEngines = true
 
 export default function robots(): MetadataRoute.Robots {
   if (!allowSearchEngines) {
