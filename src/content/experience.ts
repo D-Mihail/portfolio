@@ -23,6 +23,7 @@ export const experience: Role[] = [
       },
       {
         text: 'Designed observability events across a migration between two GraphQL engines, surfacing real payment bugs.',
+        variants: ['general'],
       },
       {
         text: 'Earlier: search over 1.3 million clinical terminology rows, Stripe pricing per location, POS package accounting.',
@@ -58,14 +59,17 @@ export const flagship: Project = {
       text: 'Rebuilt a WordPress backend on unindexed key-value tables as a multi-tenant GraphQL platform. Measured on production: slowest filter 14.4 s → 93 ms on the server, 15.2 s → 0.63 s on screen.',
     },
     {
+      text: 'Built a typed library of about fifty components whose design rules are enforced by the compiler: pages carry no class names.',
+    },
+    {
+      text: 'Two Next.js frontends: a headless TanStack grid with cursor pagination and 44 px targets; a 550-cell repaint per keystroke traced and fixed.',
+      variants: ['hornetsecurity'],
+    },
+    {
       text: 'Tenant isolation by construction: tenant from the session, writes scoped by company, default-deny access, cross-tenant tests on a real database.',
     },
     {
       text: 'Run it in production myself: phased deploys with backup before migrate and rollback by tag, encrypted nightly backups, SOPS secrets, alerting added after a real disk incident.',
-    },
-    {
-      text: 'Built a typed library of about fifty components whose design rules are enforced by the compiler.',
-      variants: ['general'],
     },
     {
       text: 'About 4,000 tests and 32 decision records since July 2026, built with parallel AI agents under a protocol I wrote: isolated worktrees, a database per agent, verified landing.',

@@ -7,15 +7,15 @@ const generalSummary =
 
 export const profile: Profile = {
   name: 'Mihail Dimoski',
-  location: 'Skopje, North Macedonia · open to remote EU and relocation',
+  location: 'Skopje, North Macedonia',
   headline: {
     general: generalHeadline,
-    hornetsecurity: 'Software Developer · TypeScript, Node.js, GraphQL · backend services and delivery',
+    hornetsecurity: 'Frontend Engineer · TypeScript, React / Next.js · design systems, performance, accessibility',
   },
   summary: {
     general: generalSummary,
     hornetsecurity:
-      'Backend-leaning full-stack engineer working in containerised Node.js services: a public webhook ingress, a queue consumer, REST and GraphQL APIs, with CI/CD as daily practice. I rebuilt and run a multi-tenant platform on MariaDB and Docker end to end, including its deploy pipeline, and I write decisions down and challenge them.',
+      'Frontend engineer who owns the whole surface a user touches, from the component library to the API it calls. I started on the frontend, went deep into the backend to stop the failures a UI can only display, and came back with production numbers: a 15-second screen to under a second. I write decisions down with the options rejected.',
   },
   links: [
     { label: 'mihaildimoski.dev', href: 'https://mihaildimoski.dev' },
